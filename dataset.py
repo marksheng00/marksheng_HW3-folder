@@ -41,3 +41,16 @@ class trainset(Dataset):
 
 train_data = trainset()
 trainloader = DataLoader(train_data, batch_size=4,shuffle=True)
+###
+Traceback (most recent call last):
+  File "E:/flownets/dataset.py", line 43, in <module>
+    trainloader = DataLoader(train_data, batch_size=4,shuffle=True)
+  File "D:\AI\Anaconda\lib\site-packages\torch\utils\data\dataloader.py", line 213, in __init__
+    sampler = RandomSampler(dataset)
+  File "D:\AI\Anaconda\lib\site-packages\torch\utils\data\sampler.py", line 92, in __init__
+    if not isinstance(self.num_samples, int) or self.num_samples <= 0:
+  File "D:\AI\Anaconda\lib\site-packages\torch\utils\data\sampler.py", line 100, in num_samples
+    return len(self.data_source)
+  File "E:/flownets/dataset.py", line 39, in __len__
+    return len(self.images)
+TypeError: object of type 'function' has no len()
